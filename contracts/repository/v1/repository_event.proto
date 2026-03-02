@@ -19,7 +19,7 @@ enum EventType {
 message RepositoryEventMessage {
     Provider provider = 1;
     EventType event_type = 2;
-    string repository_id = 3;
+    int64 repository_id = 3;
     string repo_full_name = 4;
     string default_branch = 5;
     string clone_url = 6;

@@ -126,7 +126,7 @@ type RepositoryEventMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Provider      Provider               `protobuf:"varint,1,opt,name=provider,proto3,enum=repository.v1.Provider" json:"provider,omitempty"`
 	EventType     EventType              `protobuf:"varint,2,opt,name=event_type,json=eventType,proto3,enum=repository.v1.EventType" json:"event_type,omitempty"`
-	RepositoryId  string                 `protobuf:"bytes,3,opt,name=repository_id,json=repositoryId,proto3" json:"repository_id,omitempty"`
+	RepositoryId  int64                  `protobuf:"varint,3,opt,name=repository_id,json=repositoryId,proto3" json:"repository_id,omitempty"`
 	RepoFullName  string                 `protobuf:"bytes,4,opt,name=repo_full_name,json=repoFullName,proto3" json:"repo_full_name,omitempty"`
 	DefaultBranch string                 `protobuf:"bytes,5,opt,name=default_branch,json=defaultBranch,proto3" json:"default_branch,omitempty"`
 	CloneUrl      string                 `protobuf:"bytes,6,opt,name=clone_url,json=cloneUrl,proto3" json:"clone_url,omitempty"`
@@ -178,11 +178,11 @@ func (x *RepositoryEventMessage) GetEventType() EventType {
 	return EventType_UNKNOWN_EVENT
 }
 
-func (x *RepositoryEventMessage) GetRepositoryId() string {
+func (x *RepositoryEventMessage) GetRepositoryId() int64 {
 	if x != nil {
 		return x.RepositoryId
 	}
-	return ""
+	return 0
 }
 
 func (x *RepositoryEventMessage) GetRepoFullName() string {
@@ -215,7 +215,7 @@ const file_repository_v1_repository_event_proto_rawDesc = "" +
 	"\bprovider\x18\x01 \x01(\x0e2\x17.repository.v1.ProviderR\bprovider\x127\n" +
 	"\n" +
 	"event_type\x18\x02 \x01(\x0e2\x18.repository.v1.EventTypeR\teventType\x12#\n" +
-	"\rrepository_id\x18\x03 \x01(\tR\frepositoryId\x12$\n" +
+	"\rrepository_id\x18\x03 \x01(\x03R\frepositoryId\x12$\n" +
 	"\x0erepo_full_name\x18\x04 \x01(\tR\frepoFullName\x12%\n" +
 	"\x0edefault_branch\x18\x05 \x01(\tR\rdefaultBranch\x12\x1b\n" +
 	"\tclone_url\x18\x06 \x01(\tR\bcloneUrl*>\n" +
