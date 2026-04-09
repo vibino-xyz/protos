@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-package indexing.v1;
-option go_package = "github.com/vibino-xyz/protos/contracts/build/go/indexing/v1;indexingv1";
-
-message IndexingEventMessage {
-    string chunk_id = 1;
-    string repository_id = 2;
-}

@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: repository/v1/repository_event.proto
+// source: repository_event.proto
 
-package repositoryv1
+package contracts
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -57,11 +57,11 @@ func (x Provider) String() string {
 }
 
 func (Provider) Descriptor() protoreflect.EnumDescriptor {
-	return file_repository_v1_repository_event_proto_enumTypes[0].Descriptor()
+	return file_repository_event_proto_enumTypes[0].Descriptor()
 }
 
 func (Provider) Type() protoreflect.EnumType {
-	return &file_repository_v1_repository_event_proto_enumTypes[0]
+	return &file_repository_event_proto_enumTypes[0]
 }
 
 func (x Provider) Number() protoreflect.EnumNumber {
@@ -70,7 +70,7 @@ func (x Provider) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use Provider.Descriptor instead.
 func (Provider) EnumDescriptor() ([]byte, []int) {
-	return file_repository_v1_repository_event_proto_rawDescGZIP(), []int{0}
+	return file_repository_event_proto_rawDescGZIP(), []int{0}
 }
 
 type EventType int32
@@ -106,11 +106,11 @@ func (x EventType) String() string {
 }
 
 func (EventType) Descriptor() protoreflect.EnumDescriptor {
-	return file_repository_v1_repository_event_proto_enumTypes[1].Descriptor()
+	return file_repository_event_proto_enumTypes[1].Descriptor()
 }
 
 func (EventType) Type() protoreflect.EnumType {
-	return &file_repository_v1_repository_event_proto_enumTypes[1]
+	return &file_repository_event_proto_enumTypes[1]
 }
 
 func (x EventType) Number() protoreflect.EnumNumber {
@@ -119,13 +119,13 @@ func (x EventType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use EventType.Descriptor instead.
 func (EventType) EnumDescriptor() ([]byte, []int) {
-	return file_repository_v1_repository_event_proto_rawDescGZIP(), []int{1}
+	return file_repository_event_proto_rawDescGZIP(), []int{1}
 }
 
 type RepositoryEventMessage struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Provider      Provider               `protobuf:"varint,1,opt,name=provider,proto3,enum=repository.v1.Provider" json:"provider,omitempty"`
-	EventType     EventType              `protobuf:"varint,2,opt,name=event_type,json=eventType,proto3,enum=repository.v1.EventType" json:"event_type,omitempty"`
+	Provider      Provider               `protobuf:"varint,1,opt,name=provider,proto3,enum=contracts.v1.Provider" json:"provider,omitempty"`
+	EventType     EventType              `protobuf:"varint,2,opt,name=event_type,json=eventType,proto3,enum=contracts.v1.EventType" json:"event_type,omitempty"`
 	RepositoryId  int64                  `protobuf:"varint,3,opt,name=repository_id,json=repositoryId,proto3" json:"repository_id,omitempty"`
 	RepoFullName  string                 `protobuf:"bytes,4,opt,name=repo_full_name,json=repoFullName,proto3" json:"repo_full_name,omitempty"`
 	DefaultBranch string                 `protobuf:"bytes,5,opt,name=default_branch,json=defaultBranch,proto3" json:"default_branch,omitempty"`
@@ -136,7 +136,7 @@ type RepositoryEventMessage struct {
 
 func (x *RepositoryEventMessage) Reset() {
 	*x = RepositoryEventMessage{}
-	mi := &file_repository_v1_repository_event_proto_msgTypes[0]
+	mi := &file_repository_event_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -148,7 +148,7 @@ func (x *RepositoryEventMessage) String() string {
 func (*RepositoryEventMessage) ProtoMessage() {}
 
 func (x *RepositoryEventMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_repository_v1_repository_event_proto_msgTypes[0]
+	mi := &file_repository_event_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -161,7 +161,7 @@ func (x *RepositoryEventMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RepositoryEventMessage.ProtoReflect.Descriptor instead.
 func (*RepositoryEventMessage) Descriptor() ([]byte, []int) {
-	return file_repository_v1_repository_event_proto_rawDescGZIP(), []int{0}
+	return file_repository_event_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *RepositoryEventMessage) GetProvider() Provider {
@@ -206,15 +206,15 @@ func (x *RepositoryEventMessage) GetCloneUrl() string {
 	return ""
 }
 
-var File_repository_v1_repository_event_proto protoreflect.FileDescriptor
+var File_repository_event_proto protoreflect.FileDescriptor
 
-const file_repository_v1_repository_event_proto_rawDesc = "" +
+const file_repository_event_proto_rawDesc = "" +
 	"\n" +
-	"$repository/v1/repository_event.proto\x12\rrepository.v1\"\x95\x02\n" +
-	"\x16RepositoryEventMessage\x123\n" +
-	"\bprovider\x18\x01 \x01(\x0e2\x17.repository.v1.ProviderR\bprovider\x127\n" +
+	"\x16repository_event.proto\x12\fcontracts.v1\"\x93\x02\n" +
+	"\x16RepositoryEventMessage\x122\n" +
+	"\bprovider\x18\x01 \x01(\x0e2\x16.contracts.v1.ProviderR\bprovider\x126\n" +
 	"\n" +
-	"event_type\x18\x02 \x01(\x0e2\x18.repository.v1.EventTypeR\teventType\x12#\n" +
+	"event_type\x18\x02 \x01(\x0e2\x17.contracts.v1.EventTypeR\teventType\x12#\n" +
 	"\rrepository_id\x18\x03 \x01(\x03R\frepositoryId\x12$\n" +
 	"\x0erepo_full_name\x18\x04 \x01(\tR\frepoFullName\x12%\n" +
 	"\x0edefault_branch\x18\x05 \x01(\tR\rdefaultBranch\x12\x1b\n" +
@@ -230,30 +230,30 @@ const file_repository_v1_repository_event_proto_rawDesc = "" +
 	"\rUNKNOWN_EVENT\x10\x00\x12\x0e\n" +
 	"\n" +
 	"FULL_INDEX\x10\x01\x12\x15\n" +
-	"\x11INCREMENTAL_INDEX\x10\x02BLZJgithub.com/vibino-xyz/protos/contracts/build/go/repository/v1;repositoryv1b\x06proto3"
+	"\x11INCREMENTAL_INDEX\x10\x02BBZ@github.com/vibino-xyz/protos/contracts/build/contracts;contractsb\x06proto3"
 
 var (
-	file_repository_v1_repository_event_proto_rawDescOnce sync.Once
-	file_repository_v1_repository_event_proto_rawDescData []byte
+	file_repository_event_proto_rawDescOnce sync.Once
+	file_repository_event_proto_rawDescData []byte
 )
 
-func file_repository_v1_repository_event_proto_rawDescGZIP() []byte {
-	file_repository_v1_repository_event_proto_rawDescOnce.Do(func() {
-		file_repository_v1_repository_event_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_repository_v1_repository_event_proto_rawDesc), len(file_repository_v1_repository_event_proto_rawDesc)))
+func file_repository_event_proto_rawDescGZIP() []byte {
+	file_repository_event_proto_rawDescOnce.Do(func() {
+		file_repository_event_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_repository_event_proto_rawDesc), len(file_repository_event_proto_rawDesc)))
 	})
-	return file_repository_v1_repository_event_proto_rawDescData
+	return file_repository_event_proto_rawDescData
 }
 
-var file_repository_v1_repository_event_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
-var file_repository_v1_repository_event_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
-var file_repository_v1_repository_event_proto_goTypes = []any{
-	(Provider)(0),                  // 0: repository.v1.Provider
-	(EventType)(0),                 // 1: repository.v1.EventType
-	(*RepositoryEventMessage)(nil), // 2: repository.v1.RepositoryEventMessage
+var file_repository_event_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_repository_event_proto_msgTypes = make([]protoimpl.MessageInfo, 1)
+var file_repository_event_proto_goTypes = []any{
+	(Provider)(0),                  // 0: contracts.v1.Provider
+	(EventType)(0),                 // 1: contracts.v1.EventType
+	(*RepositoryEventMessage)(nil), // 2: contracts.v1.RepositoryEventMessage
 }
-var file_repository_v1_repository_event_proto_depIdxs = []int32{
-	0, // 0: repository.v1.RepositoryEventMessage.provider:type_name -> repository.v1.Provider
-	1, // 1: repository.v1.RepositoryEventMessage.event_type:type_name -> repository.v1.EventType
+var file_repository_event_proto_depIdxs = []int32{
+	0, // 0: contracts.v1.RepositoryEventMessage.provider:type_name -> contracts.v1.Provider
+	1, // 1: contracts.v1.RepositoryEventMessage.event_type:type_name -> contracts.v1.EventType
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -261,27 +261,27 @@ var file_repository_v1_repository_event_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_repository_v1_repository_event_proto_init() }
-func file_repository_v1_repository_event_proto_init() {
-	if File_repository_v1_repository_event_proto != nil {
+func init() { file_repository_event_proto_init() }
+func file_repository_event_proto_init() {
+	if File_repository_event_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_repository_v1_repository_event_proto_rawDesc), len(file_repository_v1_repository_event_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_repository_event_proto_rawDesc), len(file_repository_event_proto_rawDesc)),
 			NumEnums:      2,
 			NumMessages:   1,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
-		GoTypes:           file_repository_v1_repository_event_proto_goTypes,
-		DependencyIndexes: file_repository_v1_repository_event_proto_depIdxs,
-		EnumInfos:         file_repository_v1_repository_event_proto_enumTypes,
-		MessageInfos:      file_repository_v1_repository_event_proto_msgTypes,
+		GoTypes:           file_repository_event_proto_goTypes,
+		DependencyIndexes: file_repository_event_proto_depIdxs,
+		EnumInfos:         file_repository_event_proto_enumTypes,
+		MessageInfos:      file_repository_event_proto_msgTypes,
 	}.Build()
-	File_repository_v1_repository_event_proto = out.File
-	file_repository_v1_repository_event_proto_goTypes = nil
-	file_repository_v1_repository_event_proto_depIdxs = nil
+	File_repository_event_proto = out.File
+	file_repository_event_proto_goTypes = nil
+	file_repository_event_proto_depIdxs = nil
 }

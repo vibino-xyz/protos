@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package contracts.v1;
+option go_package = "github.com/vibino-xyz/protos/contracts/build/contracts;contracts";
+
+message EmbeddingEventMessage {
+    string chunk_id = 1;
+    string repository_id = 2;
+}
