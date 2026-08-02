@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package contracts.v1;
+
+option go_package = "github.com/vibino-xyz/protos/contracts/build/contracts;contracts";
+
+message RetrievedChunk {
+  string id = 1;
+  string repository_id = 2;
+  string file_id = 3;
+  int32 start_line = 4;
+  int32 end_line = 5;
+  string type = 6;
+  string language = 7;
+  string summary = 8;
+}
+
+message RetrieveRequest {
+  string query = 1;
+  string organization_id = 2;
+  int32 top_k = 3;
+}
+
+message RetrieveResponse {
+  string formatted_context = 1;
+  repeated RetrievedChunk chunks = 2;
+}
+
+service RetrievalService {
+  rpc Retrieve(RetrieveRequest) returns (RetrieveResponse);
+}

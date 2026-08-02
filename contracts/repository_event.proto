@@ -2,25 +2,43 @@ syntax = "proto3";
 
 package contracts.v1;
 option go_package = "github.com/vibino-xyz/protos/contracts/build/contracts;contracts";
+import "google/protobuf/timestamp.proto";
 
 enum Provider {
-    UNKNOWN = 0;
-    GITHUB = 1;
-    GITLAB = 2;
-    BITBUCKET = 3;
+  UNKNOWN = 0;
+  GITHUB = 1;
+  GITLAB = 2;
+  BITBUCKET = 3;
 }
 
 enum EventType {
-    UNKNOWN_EVENT = 0;
-    FULL_INDEX = 1;
-    INCREMENTAL_INDEX = 2;
+  UNKNOWN_EVENT = 0;
+  FULL_INDEX = 1;
+  INCREMENTAL_INDEX = 2;
+}
+
+message Repository {
+  int64 id = 1;
+  string full_name = 2;
+  bool private = 3;
+  string clone_url = 4;
+  string ssh_url = 5;
+  string default_branch = 6;
+}
+
+message Commit {
+  string id = 1;
+  repeated string added = 2;
+  repeated string removed = 3;
+  repeated string modified = 4;
 }
 
 message RepositoryEventMessage {
-    Provider provider = 1;
-    EventType event_type = 2;
-    int64 repository_id = 3;
-    string repo_full_name = 4;
-    string default_branch = 5;
-    string clone_url = 6;
+  Provider provider = 1;
+  EventType event_type = 2;
+  Repository repository = 3;
+  repeated Commit commits = 4;
+  Commit head_commit = 5;
+  int64 installation_id = 6;
+  string organization_id = 7;
 }
