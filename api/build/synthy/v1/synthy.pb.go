@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        (unknown)
-// source: synthy/v1/retrieval.proto
+// source: synthy/v1/synthy.proto
 
-package contracts
+package synthy_v1
 
 import (
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
@@ -37,7 +37,7 @@ type RetrievedChunk struct {
 
 func (x *RetrievedChunk) Reset() {
 	*x = RetrievedChunk{}
-	mi := &file_synthy_v1_retrieval_proto_msgTypes[0]
+	mi := &file_synthy_v1_synthy_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -49,7 +49,7 @@ func (x *RetrievedChunk) String() string {
 func (*RetrievedChunk) ProtoMessage() {}
 
 func (x *RetrievedChunk) ProtoReflect() protoreflect.Message {
-	mi := &file_synthy_v1_retrieval_proto_msgTypes[0]
+	mi := &file_synthy_v1_synthy_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -62,7 +62,7 @@ func (x *RetrievedChunk) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RetrievedChunk.ProtoReflect.Descriptor instead.
 func (*RetrievedChunk) Descriptor() ([]byte, []int) {
-	return file_synthy_v1_retrieval_proto_rawDescGZIP(), []int{0}
+	return file_synthy_v1_synthy_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *RetrievedChunk) GetId() string {
@@ -132,7 +132,7 @@ type RetrieveRequest struct {
 
 func (x *RetrieveRequest) Reset() {
 	*x = RetrieveRequest{}
-	mi := &file_synthy_v1_retrieval_proto_msgTypes[1]
+	mi := &file_synthy_v1_synthy_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -144,7 +144,7 @@ func (x *RetrieveRequest) String() string {
 func (*RetrieveRequest) ProtoMessage() {}
 
 func (x *RetrieveRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_synthy_v1_retrieval_proto_msgTypes[1]
+	mi := &file_synthy_v1_synthy_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -157,7 +157,7 @@ func (x *RetrieveRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RetrieveRequest.ProtoReflect.Descriptor instead.
 func (*RetrieveRequest) Descriptor() ([]byte, []int) {
-	return file_synthy_v1_retrieval_proto_rawDescGZIP(), []int{1}
+	return file_synthy_v1_synthy_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *RetrieveRequest) GetQuery() string {
@@ -191,7 +191,7 @@ type RetrieveResponse struct {
 
 func (x *RetrieveResponse) Reset() {
 	*x = RetrieveResponse{}
-	mi := &file_synthy_v1_retrieval_proto_msgTypes[2]
+	mi := &file_synthy_v1_synthy_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -203,7 +203,7 @@ func (x *RetrieveResponse) String() string {
 func (*RetrieveResponse) ProtoMessage() {}
 
 func (x *RetrieveResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_synthy_v1_retrieval_proto_msgTypes[2]
+	mi := &file_synthy_v1_synthy_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -216,7 +216,7 @@ func (x *RetrieveResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RetrieveResponse.ProtoReflect.Descriptor instead.
 func (*RetrieveResponse) Descriptor() ([]byte, []int) {
-	return file_synthy_v1_retrieval_proto_rawDescGZIP(), []int{2}
+	return file_synthy_v1_synthy_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *RetrieveResponse) GetFormattedContext() string {
@@ -233,11 +233,11 @@ func (x *RetrieveResponse) GetChunks() []*RetrievedChunk {
 	return nil
 }
 
-var File_synthy_v1_retrieval_proto protoreflect.FileDescriptor
+var File_synthy_v1_synthy_proto protoreflect.FileDescriptor
 
-const file_synthy_v1_retrieval_proto_rawDesc = "" +
+const file_synthy_v1_synthy_proto_rawDesc = "" +
 	"\n" +
-	"\x19synthy/v1/retrieval.proto\x12\fcontracts.v1\"\xe2\x01\n" +
+	"\x16synthy/v1/synthy.proto\x12\tsynthy.v1\"\xe2\x01\n" +
 	"\x0eRetrievedChunk\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\tR\x02id\x12#\n" +
 	"\rrepository_id\x18\x02 \x01(\tR\frepositoryId\x12\x17\n" +
@@ -251,35 +251,35 @@ const file_synthy_v1_retrieval_proto_rawDesc = "" +
 	"\x0fRetrieveRequest\x12\x14\n" +
 	"\x05query\x18\x01 \x01(\tR\x05query\x12'\n" +
 	"\x0forganization_id\x18\x02 \x01(\tR\x0eorganizationId\x12\x13\n" +
-	"\x05top_k\x18\x03 \x01(\x05R\x04topK\"u\n" +
+	"\x05top_k\x18\x03 \x01(\x05R\x04topK\"r\n" +
 	"\x10RetrieveResponse\x12+\n" +
-	"\x11formatted_context\x18\x01 \x01(\tR\x10formattedContext\x124\n" +
-	"\x06chunks\x18\x02 \x03(\v2\x1c.contracts.v1.RetrievedChunkR\x06chunks2]\n" +
-	"\x10RetrievalService\x12I\n" +
-	"\bRetrieve\x12\x1d.contracts.v1.RetrieveRequest\x1a\x1e.contracts.v1.RetrieveResponseBBZ@github.com/vibino-xyz/protos/contracts/build/contracts;contractsb\x06proto3"
+	"\x11formatted_context\x18\x01 \x01(\tR\x10formattedContext\x121\n" +
+	"\x06chunks\x18\x02 \x03(\v2\x19.synthy.v1.RetrievedChunkR\x06chunks2T\n" +
+	"\rSynthyService\x12C\n" +
+	"\bRetrieve\x12\x1a.synthy.v1.RetrieveRequest\x1a\x1b.synthy.v1.RetrieveResponseB<Z:github.com/vibino-xyz/protos/api/build/synthy/v1;synthy_v1b\x06proto3"
 
 var (
-	file_synthy_v1_retrieval_proto_rawDescOnce sync.Once
-	file_synthy_v1_retrieval_proto_rawDescData []byte
+	file_synthy_v1_synthy_proto_rawDescOnce sync.Once
+	file_synthy_v1_synthy_proto_rawDescData []byte
 )
 
-func file_synthy_v1_retrieval_proto_rawDescGZIP() []byte {
-	file_synthy_v1_retrieval_proto_rawDescOnce.Do(func() {
-		file_synthy_v1_retrieval_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_synthy_v1_retrieval_proto_rawDesc), len(file_synthy_v1_retrieval_proto_rawDesc)))
+func file_synthy_v1_synthy_proto_rawDescGZIP() []byte {
+	file_synthy_v1_synthy_proto_rawDescOnce.Do(func() {
+		file_synthy_v1_synthy_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_synthy_v1_synthy_proto_rawDesc), len(file_synthy_v1_synthy_proto_rawDesc)))
 	})
-	return file_synthy_v1_retrieval_proto_rawDescData
+	return file_synthy_v1_synthy_proto_rawDescData
 }
 
-var file_synthy_v1_retrieval_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
-var file_synthy_v1_retrieval_proto_goTypes = []any{
-	(*RetrievedChunk)(nil),   // 0: contracts.v1.RetrievedChunk
-	(*RetrieveRequest)(nil),  // 1: contracts.v1.RetrieveRequest
-	(*RetrieveResponse)(nil), // 2: contracts.v1.RetrieveResponse
+var file_synthy_v1_synthy_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_synthy_v1_synthy_proto_goTypes = []any{
+	(*RetrievedChunk)(nil),   // 0: synthy.v1.RetrievedChunk
+	(*RetrieveRequest)(nil),  // 1: synthy.v1.RetrieveRequest
+	(*RetrieveResponse)(nil), // 2: synthy.v1.RetrieveResponse
 }
-var file_synthy_v1_retrieval_proto_depIdxs = []int32{
-	0, // 0: contracts.v1.RetrieveResponse.chunks:type_name -> contracts.v1.RetrievedChunk
-	1, // 1: contracts.v1.RetrievalService.Retrieve:input_type -> contracts.v1.RetrieveRequest
-	2, // 2: contracts.v1.RetrievalService.Retrieve:output_type -> contracts.v1.RetrieveResponse
+var file_synthy_v1_synthy_proto_depIdxs = []int32{
+	0, // 0: synthy.v1.RetrieveResponse.chunks:type_name -> synthy.v1.RetrievedChunk
+	1, // 1: synthy.v1.SynthyService.Retrieve:input_type -> synthy.v1.RetrieveRequest
+	2, // 2: synthy.v1.SynthyService.Retrieve:output_type -> synthy.v1.RetrieveResponse
 	2, // [2:3] is the sub-list for method output_type
 	1, // [1:2] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
@@ -287,26 +287,26 @@ var file_synthy_v1_retrieval_proto_depIdxs = []int32{
 	0, // [0:1] is the sub-list for field type_name
 }
 
-func init() { file_synthy_v1_retrieval_proto_init() }
-func file_synthy_v1_retrieval_proto_init() {
-	if File_synthy_v1_retrieval_proto != nil {
+func init() { file_synthy_v1_synthy_proto_init() }
+func file_synthy_v1_synthy_proto_init() {
+	if File_synthy_v1_synthy_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_synthy_v1_retrieval_proto_rawDesc), len(file_synthy_v1_retrieval_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_synthy_v1_synthy_proto_rawDesc), len(file_synthy_v1_synthy_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   3,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_synthy_v1_retrieval_proto_goTypes,
-		DependencyIndexes: file_synthy_v1_retrieval_proto_depIdxs,
-		MessageInfos:      file_synthy_v1_retrieval_proto_msgTypes,
+		GoTypes:           file_synthy_v1_synthy_proto_goTypes,
+		DependencyIndexes: file_synthy_v1_synthy_proto_depIdxs,
+		MessageInfos:      file_synthy_v1_synthy_proto_msgTypes,
 	}.Build()
-	File_synthy_v1_retrieval_proto = out.File
-	file_synthy_v1_retrieval_proto_goTypes = nil
-	file_synthy_v1_retrieval_proto_depIdxs = nil
+	File_synthy_v1_synthy_proto = out.File
+	file_synthy_v1_synthy_proto_goTypes = nil
+	file_synthy_v1_synthy_proto_depIdxs = nil
 }

@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package contracts.v1;
+package synthy.v1;
 
-option go_package = "github.com/vibino-xyz/protos/contracts/build/contracts;contracts";
+option go_package = "github.com/vibino-xyz/protos/api/build/synthy/v1;synthy_v1";
 
 message RetrievedChunk {
   string id = 1;
@@ -26,6 +26,6 @@ message RetrieveResponse {
   repeated RetrievedChunk chunks = 2;
 }
 
-service RetrievalService {
+service SynthyService {
   rpc Retrieve(RetrieveRequest) returns (RetrieveResponse);
 }
